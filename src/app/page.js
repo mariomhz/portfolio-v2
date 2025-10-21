@@ -27,6 +27,15 @@ export default function Home() {
     });
   };
 
+  const scrollToSection = (sectionClass) => {
+    const section = document.querySelector(`.${sectionClass}`);
+    if (section) {
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="app">
       <section className="hero">
@@ -45,9 +54,9 @@ export default function Home() {
 
         <div className="nav">
           <p>MARIO HERNÁNDEZ</p>
-          <a href="#">PROFILE</a>
-          <a href="#">PROJECTS</a>
-          <a href="#">CONTACT</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>PROJECTS</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>PROFILE</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('banner'); }}>CONTACT</a>
         </div>
 
         <div className="scroll-indicator">
@@ -110,7 +119,7 @@ export default function Home() {
 
         <div className="banner-copy">
           <p>GET IN TOUCH WITH ME!</p>
-          <p className="subtitle">I’m always open to collaborating on new web projects.</p>
+          <p className="subtitle">I'm always open to collaborating on new web projects.</p>
           <div className="buttons">
             <button>LinkedIn</button>
             <button>Email Me</button>
@@ -125,9 +134,9 @@ export default function Home() {
           <p><a href="">Instagram</a> / <a href="">Github</a> / <a href="">Discord</a> / <a href="">LinkedIn</a></p>
           <div className="footer-links">
             <h1 onClick={scrollToTop} style={{ cursor: 'pointer' }}>Back to top</h1>
-            <h1>About</h1>
-            <h1>Projects</h1>
-            <h1>Contact</h1>
+            <h1 onClick={() => scrollToSection('about')} style={{ cursor: 'pointer' }}>About</h1>
+            <h1 onClick={() => scrollToSection('projects')} style={{ cursor: 'pointer' }}>Projects</h1>
+            <h1 onClick={() => scrollToSection('banner')} style={{ cursor: 'pointer' }}>Contact</h1>
           </div>
           <p>&copy; designed by Mario Hernandez</p>
         </div>
