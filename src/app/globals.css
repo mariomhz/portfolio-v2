@@ -10,20 +10,6 @@ html, body {
     background-color: black;
     font-family: var(--font-roboto-mono), sans-serif; 
     color: white;
-    cursor: none;
-}
-
-/* Custom cursor follower */
-.custom-cursor {
-    width: 32px;
-    height: 32px;
-    background-image: url('/click.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
 }
 
 img, video {
