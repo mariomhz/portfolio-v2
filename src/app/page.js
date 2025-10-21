@@ -1,8 +1,8 @@
 "use client"
 
 import { useEffect } from "react";
-import ParallaxImage from "./ParallaxImage";
-import ParallaxVideo from "./ParallaxVideo";
+import ParallaxImage from "./components/ParallaxImage";
+import ParallaxVideo from "./components/ParallaxVideo";
 import Lenis from "lenis";
 import Image from "next/image";
 import styles from "./page.module.css";
@@ -41,6 +41,13 @@ export default function Home() {
           <a href="#">PROFILE</a>
           <a href="#">PROJECTS</a>
           <a href="#">CONTACT</a>
+        </div>
+
+        <div className="scroll-indicator">
+          <p>SCROLL</p>
+          <svg className="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+            <path d="M12 5v14M19 12l-7 7-7-7" />
+          </svg>
         </div>
       </section>
 
