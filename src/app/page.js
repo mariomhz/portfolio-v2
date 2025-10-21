@@ -83,7 +83,7 @@ export default function Home() {
           <p>Who am I?</p>
           <p>
             I&apos;m Mario. A polyglot fluent in 8 languages, I enjoy breaking communication barriers and creating seamless digital experiences.
-            I design impactful visuals and purposeful concepts,
+            I like to design impactful visuals and purposeful concepts,
             and I thrive in collaborative environments where my tech skills, creativity, and social abilities come together.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
 
         <div className="banner-copy">
           <p>GET IN TOUCH WITH ME!</p>
-          <p className="subtitle">I’m always open to collaborating on exciting web projects.</p>
+          <p className="subtitle">I’m always open to collaborating on new web projects.</p>
           <div className="buttons">
             <button>LinkedIn</button>
             <button>Email Me</button>
