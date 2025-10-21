@@ -20,6 +20,13 @@ export default function Home() {
     requestAnimationFrame(raf);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div className="app">
       <section className="hero">
@@ -117,7 +124,7 @@ export default function Home() {
         <div className="col">
           <p><a href="">Instagram</a> / <a href="">Github</a> / <a href="">Discord</a> / <a href="">LinkedIn</a></p>
           <div className="footer-links">
-            <h1>Back to top</h1>
+            <h1 onClick={scrollToTop} style={{ cursor: 'pointer' }}>Back to top</h1>
             <h1>About</h1>
             <h1>Projects</h1>
             <h1>Contact</h1>
