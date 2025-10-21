@@ -119,7 +119,7 @@ export default function Home() {
 
         <div className="banner-copy">
           <p>GET IN TOUCH WITH ME!</p>
-          <p className="subtitle">I'm always open to collaborating on new web projects.</p>
+          <p className="subtitle">I&apos;m always open to collaborating on new web projects.</p>
           <div className="buttons">
             <button>LinkedIn</button>
             <button>Email Me</button>
