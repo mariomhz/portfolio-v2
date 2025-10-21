@@ -1,0 +1,123 @@
+"use client"
+
+import { useEffect } from "react";
+import ParallaxImage from "./ParallaxImage";
+import ParallaxVideo from "./ParallaxVideo";
+import Lenis from "lenis";
+import Image from "next/image";
+import styles from "./page.module.css";
+
+export default function Home() {
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
+  return (
+    <div className="app">
+      <section className="hero">
+        {/* <div className="img">
+          <ParallaxVideo
+            src="/videos/muglervideo.mp4"
+            autoPlay
+            loop
+            muted
+          />
+        </div> */}
+
+        <div className="title">
+          <h1>Front-end Craftsman <span className="italic">with UX/UI focus</span></h1>
+        </div>
+
+        <div className="nav">
+          <p>MARIO HERNÁNDEZ</p>
+          <a href="#">PROFILE</a>
+          <a href="#">PROJECTS</a>
+          <a href="#">CONTACT</a>
+        </div>
+      </section>
+
+
+      <section className="projects">
+        <div className="img">
+          {/* <ParallaxImage src="/portraits/supernova.jpg" alt="" /> */}
+        </div>
+
+        <div className="projects-brief">
+          <p>To design is to communicate clearly by whatever means you can control or master. - MILTON GLASER</p>
+        </div>
+
+        <div className="col projects-cover">
+          <div className="img">
+            <ParallaxImage src="/portraits/gradient1.jpg" alt="" />
+          </div>
+        </div>
+        <div className="col projects-list">
+          <div className="project">
+            <h1>PORTFOLIO V.1</h1>
+            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+          </div>
+          <div className="project">
+            <h1>ASIREM</h1>
+            <p>A mockup of a hypothetical luxury shop designed to practice CSS techniques, including Grid and Flexbox.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="about">
+        <div className="col intro">
+          <p>Who am I?</p>
+          <p>
+            I'm Mario. A polyglot fluent in 8 languages, I enjoy breaking communication barriers and creating seamless digital experiences.
+            I design impactful visuals and purposeful concepts,
+            and I thrive in collaborative environments where my tech skills, creativity, and social abilities come together.
+          </p>
+        </div>
+        <div className="col portrait">
+          <div className="portrait-container">
+            <div className="img">
+              <ParallaxImage src="/portraits/portrait1.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="banner">
+        <div className="img">
+          <ParallaxImage src="/portraits/gradient2.jpg" alt="" />
+        </div>
+
+        <div className="banner-copy">
+          <p>GET IN TOUCH WITH ME!</p>
+          <p className="subtitle">I’m always open to collaborating on exciting web projects.</p>
+          <div className="buttons">
+            <button>LinkedIn</button>
+            <button>Email Me</button>
+            <button>GitHub</button>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="footer">
+        <div className="col">
+          <p><a href="">Instagram</a> / <a href="">Github</a> / <a href="">Discord</a> / <a href="">LinkedIn</a></p>
+          <div className="footer-links">
+            <h1>Back to top</h1>
+            <h1>About</h1>
+            <h1>Projects</h1>
+            <h1>Contact</h1>
+          </div>
+          <p>&copy; designed by Mario Hernandez</p>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    font-family: var(--font-roboto-mono), sans-serif; 
+    color: white;
+}
+
+img, video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+p {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+button {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0.25em 1em;
+    padding: 0.3em 0.75em 0.25em 0.75em;
+    color: black;
+    background-color: white;
+    border-radius: 2em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 3;
+}
+
+.title {
+    font-family: var(--font-montserrat), sans-serif; /* Ensure Montserrat */
+    z-index: 2;
+    color: white;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nav {
+    font-family: var(--font-roboto-mono), monospace; /* Roboto Mono */
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+section.projects {
+    color: black;
+    background-color: white;
+    width: 100vw;
+    height: 125vh;
+    display: flex;
+    gap: 10em;
+}
+
+.projects-brief {
+    position: absolute;
+    width: 25%;
+    top: 35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.projects .col {
+    position: relative;
+}
+
+.col.projects-cover {
+    flex: 1;
+    height: 50%;
+}
+
+.col.projects-list {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.project {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* About section */
+.about {
+    display: flex;
+    background-color: black;
+}
+
+.intro,
+.portrait {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.intro p {
+    width: 50%;
+    text-align: center;
+}
+
+.intro p:nth-child(1) {
+    text-decoration: underline;
+    margin-bottom: 0.5em;
+}
+
+.portrait .portrait-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-copy {
+    position: relative;
+    text-align: center;
+}
+
+.banner-copy p {
+    width: 75%;
+    margin: 1em auto;
+}
+
+.footer {
+    display: flex;
+    padding: 1em;
+    background-color: black;
+}
+
+.footer .col:nth-child(1) {
+    flex: 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer .col:nth-child(2) {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
