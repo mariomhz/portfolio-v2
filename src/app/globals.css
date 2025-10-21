@@ -76,7 +76,7 @@ section {
 }
 
 .title {
-    font-family: var(--font-montserrat), sans-serif; /* Ensure Montserrat */
+    font-family: var(--font-montserrat), sans-serif;
     z-index: 2;
     color: white;
     position: absolute;
@@ -92,7 +92,7 @@ section {
 }
 
 .nav {
-    font-family: var(--font-roboto-mono), monospace; /* Roboto Mono */
+    font-family: var(--font-roboto-mono), monospace;
     position: absolute;
     top: 55%;
     left: 50%;
@@ -238,4 +238,118 @@ section.projects {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+/* Mobile styles - only affects screens smaller than 768px */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    button {
+        font-size: 11px;
+        margin: 0.25em 0.5em;
+        padding: 0.4em 0.9em;
+    }
+
+    a {
+        font-size: 12px;
+    }
+
+    .title {
+        top: 40%;
+        align-items: center;
+        text-align: center;
+        padding: 2em 1em;
+    }
+
+    .nav {
+        top: 60%;
+        flex-direction: column;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    section.projects {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        gap: 2em;
+        padding: 2em 0;
+    }
+
+    .projects-brief {
+        position: relative;
+        width: 85%;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 2em auto 0;
+    }
+
+    .col.projects-cover {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .col.projects-list {
+        padding: 2em 1em;
+        gap: 3em;
+    }
+
+    .about {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .intro,
+    .portrait {
+        padding: 3em 1.5em;
+    }
+
+    .intro p {
+        width: 85%;
+    }
+
+    .banner {
+        padding: 3em 1.5em;
+    }
+
+    .banner-copy p {
+        width: 90%;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 2em 1.5em;
+        gap: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 11px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
+    .projects-brief {
+        width: 90%;
+    }
+
+    .intro p,
+    .banner-copy p {
+        width: 95%;
+    }
 }
