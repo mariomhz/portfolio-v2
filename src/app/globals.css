@@ -207,6 +207,13 @@ section.projects {
     gap: 1em;
 }
 
+.project h1:hover {
+    /* text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 15px; */
+    cursor: pointer;
+}
+
 /* About section */
 .about {
     display: flex;
@@ -233,11 +240,11 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .portrait img {
-    left: 75px;
+    left: 4.5em;
 }
 
 .intro p {
