@@ -189,6 +189,7 @@ section.projects {
 .col.projects-cover {
     flex: 1;
     height: 50%;
+    margin-left: 10%;
 }
 
 .col.projects-list {
