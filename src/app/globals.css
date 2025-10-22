@@ -177,7 +177,7 @@ section.projects {
     position: absolute;
     width: 25%;
     top: 35%;
-    left: 35%;
+    left: 25%;
     transform: translate(-50%, -50%);
     z-index: 2;
 }
@@ -213,7 +213,17 @@ section.projects {
     background-color: black;
 }
 
-.intro,
+.intro {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 1em; */
+    gap: 1em;
+}
+
 .portrait {
     position: relative;
     flex: 1;
@@ -224,8 +234,14 @@ section.projects {
     padding: 1em;
 }
 
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .intro p {
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 
