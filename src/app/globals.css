@@ -214,6 +214,9 @@ section.projects {
 }
 
 .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     flex: 1;
     display: flex;
@@ -233,10 +236,8 @@ section.projects {
     padding: 1em;
 }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.portrait img {
+    left: 75px;
 }
 
 .intro p {
