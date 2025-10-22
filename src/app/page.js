@@ -69,9 +69,6 @@ export default function Home() {
 
 
       <section className="projects">
-        <div className="img">
-          {/* <ParallaxImage src="/portraits/supernova.jpg" alt="" /> */}
-        </div>
 
         <div className="projects-brief">
           <p>To design is to communicate clearly by whatever means you can control or master. - MILTON GLASER</p>
@@ -119,7 +116,7 @@ export default function Home() {
 
         <div className="banner-copy">
           <p>GET IN TOUCH WITH ME!</p>
-          <p className="subtitle">I&apos;m always open to collaborating on new web projects.</p>
+          <p className="subtitle">I&apos;m always open to collaborating on new projects.</p>
           <div className="buttons">
             <a href="https://www.linkedin.com/in/josemariohernandez" target="_blank" rel="noopener noreferrer">
               LinkedIn

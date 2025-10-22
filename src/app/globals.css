@@ -7,10 +7,10 @@
 html,
 body {
     width: 100%;
+    height: 100%;
     background-color: black;
     font-family: var(--font-roboto-mono), sans-serif;
     color: white;
-    overflow-x: hidden;
 }
 
 img,
@@ -39,9 +39,8 @@ p {
     line-height: 1;
 }
 
-.buttons a,
-button {
-    display: inline-block;
+button,
+.buttons a {
     border: none;
     outline: none;
     text-transform: uppercase;
@@ -52,11 +51,9 @@ button {
     color: black;
     background-color: white;
     border-radius: 2em;
-    text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.buttons a:hover,
 button:hover {
     background-color: black;
     color: white;
@@ -65,7 +62,7 @@ button:hover {
 
 section {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -75,7 +72,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: relative;
     z-index: 3;
@@ -117,16 +114,12 @@ section {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 100vw;
     padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.title h1 {
-    font-size: 78px;
 }
 
 .nav {
@@ -135,7 +128,7 @@ section {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 100vw;
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -167,16 +160,16 @@ a {
 section.projects {
     color: black;
     background-color: white;
-    width: 100%;
+    width: 100vw;
     height: 125vh;
     display: flex;
-    gap: 10em;
+    gap: 0;
 }
 
 .projects-brief {
     position: absolute;
     width: 25%;
-    top: 35%;
+    top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -189,6 +182,9 @@ section.projects {
 .col.projects-cover {
     flex: 1;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .col.projects-list {
@@ -198,6 +194,7 @@ section.projects {
     justify-content: center;
     align-items: center;
     gap: 2em;
+    margin-left: auto;
 }
 
 .project {
@@ -207,32 +204,13 @@ section.projects {
     gap: 1em;
 }
 
-.project h1:hover {
-    /* text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 15px; */
-    cursor: pointer;
-}
-
 /* About section */
 .about {
     display: flex;
     background-color: black;
 }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-}
-
+.intro,
 .portrait {
     position: relative;
     flex: 1;
@@ -240,16 +218,18 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 1em; */
+    padding: 1em;
 }
 
-.portrait img {
-    left: 4.5em;
+.intro {
+    align-items: center;
+    padding-left: 0;
 }
 
 .intro p {
-    width: 60%;
+    width: 50%;
     text-align: center;
+    margin-left: 10%;
 }
 
 .intro p:nth-child(1) {
@@ -261,6 +241,21 @@ section.projects {
     position: relative;
     width: 100%;
     height: 100%;
+}
+
+.portrait .portrait-container .img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.portrait .portrait-container .img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .banner {
@@ -275,7 +270,7 @@ section.projects {
 }
 
 .banner-copy p {
-    width: 75%;
+    width: 100%;
     margin: 1em auto;
 }
 
@@ -301,26 +296,44 @@ section.projects {
     height: 100%;
 }
 
+/* Base styles for 1920x1080 (laptop) */
+.intro p {
+    width: 60%;
+    text-align: center;
+    margin-left: 10%;
+}
+
+/* Large screen adjustments - for 1440p and higher (2560x1440 monitor) */
+@media (min-width: 2000px) {
+    .intro p {
+        margin-left: 40%; /* Less margin = more to the left */
+    }
+
+    .projects-brief {
+        left: 20%; /* Moved left from 25% */
+    }
+    
+    .col.projects-cover {
+        height: 50%;
+        margin-left: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col.projects-list {
+        margin-left: 10%;
+    }
+
+    .intro p {
+        margin-left: -10%;
+    }
+}
+
 /* Mobile styles - only affects screens smaller than 768px */
 @media (max-width: 768px) {
     h1 {
         font-size: 48px;
-    }
-
-    .title h1 {
-        font-size: 36px;
-        line-height: 1.1;
-    }
-
-    .title {
-        position: relative; /* remove absolute on mobile */
-        top: auto;
-        left: auto;
-        transform: none;
-        text-align: center;
-        align-items: center;
-        margin-bottom: 1em; /* space above nav */
-        padding: 2em 1em;
     }
 
     p {
@@ -328,7 +341,6 @@ section.projects {
         line-height: 1.3;
     }
 
-    .buttons a,
     button {
         font-size: 11px;
         margin: 0.25em 0.5em;
@@ -339,11 +351,15 @@ section.projects {
         font-size: 12px;
     }
 
+    .title {
+        top: 40%;
+        align-items: center;
+        text-align: center;
+        padding: 2em 1em;
+    }
+
     .nav {
-        position: relative; /* let it flow below title */
-        top: auto;
-        left: auto;
-        transform: none;
+        top: 60%;
         flex-direction: column;
         gap: 1em;
         padding: 1em;
@@ -405,21 +421,15 @@ section.projects {
     }
 }
 
-/* Extra small screens - 480px */
 @media (max-width: 480px) {
     h1 {
         font-size: 36px;
-    }
-
-    .title h1 {
-        font-size: 28px;
     }
 
     p {
         font-size: 11px;
     }
 
-    .buttons a,
     button {
         font-size: 10px;
     }
@@ -431,5 +441,11 @@ section.projects {
     .intro p,
     .banner-copy p {
         width: 95%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .title h1 {
+        font-size: 56px;
     }
 }
