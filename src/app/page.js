@@ -137,11 +137,11 @@ export default function Home() {
 
       <section className="footer">
         <div className="col">
-          <p><a href="">Instagram</a> / <a href="">Github</a> / <a href="">Discord</a> / <a href="">LinkedIn</a></p>
+          <p><a href="https://instagram.com/mariocoding" target="_blank" rel="noopener noreferrer">Instagram</a> / <a href="https://github.com/mariomhz" target="_blank" rel="noopener noreferrer">Github</a> / <a href="https://www.linkedin.com/in/josemariohernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           <div className="footer-links">
             <h1 onClick={scrollToTop} style={{ cursor: 'pointer' }}>Back to top</h1>
-            <h1 onClick={() => scrollToSection('about')} style={{ cursor: 'pointer' }}>About</h1>
             <h1 onClick={() => scrollToSection('projects')} style={{ cursor: 'pointer' }}>Projects</h1>
+            <h1 onClick={() => scrollToSection('about')} style={{ cursor: 'pointer' }}>About</h1>
             <h1 onClick={() => scrollToSection('banner')} style={{ cursor: 'pointer' }}>Contact</h1>
           </div>
           <p>&copy; designed by Mario Hernandez</p>
