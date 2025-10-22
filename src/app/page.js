@@ -121,9 +121,15 @@ export default function Home() {
           <p>GET IN TOUCH WITH ME!</p>
           <p className="subtitle">I&apos;m always open to collaborating on new web projects.</p>
           <div className="buttons">
-            <button>LinkedIn</button>
-            <button>Email Me</button>
-            <button>GitHub</button>
+            <a href="https://www.linkedin.com/in/josemariohernandez" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href="mailto:mariohrdezdeveloper@gmail.com">
+              Email Me
+            </a>
+            <a href="https://github.com/mariomhz" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
           </div>
         </div>
       </section>
