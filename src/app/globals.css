@@ -220,7 +220,6 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 1em; */
     gap: 1em;
 }
 
@@ -300,6 +299,22 @@ section.projects {
         font-size: 48px;
     }
 
+    .title h1 {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .title {
+        position: relative; /* remove absolute on mobile */
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 1em; /* space above nav */
+        padding: 2em 1em;
+    }
+
     p {
         font-size: 12px;
         line-height: 1.3;
@@ -316,15 +331,11 @@ section.projects {
         font-size: 12px;
     }
 
-    .title {
-        top: 40%;
-        align-items: center;
-        text-align: center;
-        padding: 2em 1em;
-    }
-
     .nav {
-        top: 60%;
+        position: relative; /* let it flow below title */
+        top: auto;
+        left: auto;
+        transform: none;
         flex-direction: column;
         gap: 1em;
         padding: 1em;
@@ -386,9 +397,14 @@ section.projects {
     }
 }
 
+/* Extra small screens - 480px */
 @media (max-width: 480px) {
     h1 {
         font-size: 36px;
+    }
+
+    .title h1 {
+        font-size: 28px;
     }
 
     p {
