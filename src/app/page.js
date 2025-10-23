@@ -81,11 +81,11 @@ export default function Home() {
         </div>
         <div className="col projects-list">
           <div className="project">
-            <h1>PORTFOLIO V.1</h1>
+            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
             <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
           </div>
           <div className="project">
-            <h1>ASIREM</h1>
+            <h1><a href="" target="_blank">MOCKUP #1</a></h1>
             <p>A mockup of a hypothetical luxury shop designed to practice CSS techniques, including Grid and Flexbox.</p>
           </div>
         </div>

@@ -30,6 +30,14 @@ h1 {
     font-weight: 400;
     letter-spacing: -1px;
     line-height: 1;
+    color: white; /* default heading color */
+}
+
+h1 > a {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 p {
@@ -54,13 +62,6 @@ button {
     border-radius: 2em;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.buttons a:hover,
-button:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
 }
 
 section {
@@ -160,7 +161,7 @@ section {
 
 a {
     text-decoration: none;
-    color: white;
+    color: inherit;
     font-size: 14px;
 }
 
@@ -208,14 +209,22 @@ section.projects {
     gap: 1em;
 }
 
-.project h1:hover {
-    /* text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 15px; */
-    cursor: pointer;
+.project h1 {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1;
+    color: black; /* explicitly set to black for projects section */
 }
 
-/* About section */
+.project h1 > a {
+    color: inherit;          /* inherit black */
+    text-decoration: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
 .about {
     display: flex;
     background-color: black;
@@ -227,10 +236,7 @@ section.projects {
     align-items: center;
     position: relative;
     flex: 1;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
     gap: 1em;
 }
 
@@ -241,7 +247,6 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 1em; */
 }
 
 .portrait img {
@@ -277,7 +282,7 @@ section.projects {
 }
 
 .banner-copy p {
-    width: 75%;
+    width: 100%;
     margin: 1em auto;
 }
 
@@ -303,7 +308,6 @@ section.projects {
     height: 100%;
 }
 
-/* Mobile styles - only affects screens smaller than 768px */
 @media (max-width: 768px) {
     h1 {
         font-size: 48px;
@@ -315,13 +319,13 @@ section.projects {
     }
 
     .title {
-        position: relative; /* remove absolute on mobile */
+        position: relative;
         top: auto;
         left: auto;
         transform: none;
         text-align: center;
         align-items: center;
-        margin-bottom: 1em; /* space above nav */
+        margin-bottom: 1em;
         padding: 2em 1em;
     }
 
@@ -342,7 +346,7 @@ section.projects {
     }
 
     .nav {
-        position: relative; /* let it flow below title */
+        position: relative;
         top: auto;
         left: auto;
         transform: none;
@@ -407,7 +411,6 @@ section.projects {
     }
 }
 
-/* Extra small screens - 480px */
 @media (max-width: 480px) {
     h1 {
         font-size: 36px;
@@ -438,14 +441,14 @@ section.projects {
 
 @media (min-width: 2000px) {
     .intro p {
-        margin-right: 5%; /* Less margin = more to the left */
+        margin-right: 5%;
     }
 
     .projects-brief {
-        left: 23%; /* Moved left from 25% */
+        left: 23%;
         top: 50%;
     }
-    
+
     .col.projects-cover {
         height: 50%;
         margin-left: 10%;
@@ -455,7 +458,6 @@ section.projects {
     }
 }
 
-/* Tablet styles - iPad and similar devices (1200x800) */
 @media (min-width: 769px) and (max-width: 1200px) {
     .title h1 {
         font-size: 56px;
