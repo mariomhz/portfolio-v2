@@ -49,7 +49,7 @@ export default function Home() {
         </div> */}
 
         <div className="title">
-          <h1>Front-end Craftsman <span className="italic">with UX/UI focus</span></h1>
+          <h1>Front-end Developer <span className="italic">with UX/UI focus</span></h1>
         </div>
 
         <div className="nav">
@@ -71,7 +71,16 @@ export default function Home() {
       <section className="projects">
 
         <div className="projects-brief">
-          <p>To design is to communicate clearly by whatever means you can control or master. - MILTON GLASER</p>
+          <p>/ NEXT.JS</p>
+          <p>/ REACT</p>
+          <p>/ VUE</p>
+          <p>/ HTML</p>
+          <p>/ CSS</p>
+          <p>/ JAVASCRIPT</p>
+          <p>/ TAILWIND</p>
+          <p>/ BOOTSTRAP</p>
+          <p>/ FIGMA</p>
+          <p>/ ILLUSTRATOR</p>
         </div>
 
         <div className="col projects-cover">
@@ -87,6 +96,22 @@ export default function Home() {
           <div className="project">
             <h1><a href="" target="_blank">MOCKUP #1</a></h1>
             <p>A mockup of a hypothetical luxury shop designed to practice CSS techniques, including Grid and Flexbox.</p>
+          </div>
+          <div className="project">
+            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
+            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+          </div>
+          <div className="project">
+            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
+            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+          </div>
+          <div className="project">
+            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
+            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+          </div>
+          <div className="project">
+            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
+            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
           </div>
         </div>
       </section>
