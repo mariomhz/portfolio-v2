@@ -10,6 +10,7 @@ import styles from "./page.module.css";
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -25,6 +26,9 @@ export default function Home() {
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      const target = e.target;
+      const isClickable = target.closest('a, button, [onclick], .scroll-indicator, .footer-links h1');
+      setIsHovering(!!isClickable);
     };
 
     window.addEventListener('mousemove', updateMousePosition);
@@ -80,15 +84,15 @@ export default function Home() {
           position: 'fixed',
           left: `${cursorPosition.x}px`,
           top: `${cursorPosition.y}px`,
-          width: '40px',
-          height: '40px',
+          width: isHovering ? '60px' : '40px',
+          height: isHovering ? '60px' : '40px',
           borderRadius: '50%',
-          border: '2px solid rgba(255, 255, 255, 0.5)',
+          border: '2px solid rgba(255, 255, 255, 1)',
           pointerEvents: 'none',
           transform: 'translate(-50%, -50%)',
           zIndex: 9999,
           mixBlendMode: 'difference',
-          transition: 'width 0.2s ease, height 0.2s ease'
+          transition: 'width 0.3s ease, height 0.3s ease'
         }}
       />
       
