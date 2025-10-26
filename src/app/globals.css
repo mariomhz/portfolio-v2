@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: auto !important;
+}
+
+a, button, [onclick], .scroll-indicator, .footer-links h1 {
+    cursor: pointer !important;
 }
 
 html,
@@ -674,7 +679,7 @@ section.projects {
 
     .projects-brief {
         left: 23%;
-        top: 64%;
+        top: 68%;
     }
 
     .col.projects-cover {
