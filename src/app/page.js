@@ -36,6 +36,10 @@ export default function Home() {
     }
   };
 
+  const scrollToNextSection = () => {
+    scrollToSection('projects');
+  };
+
   return (
     <div className="app">
       <section className="hero">
@@ -59,7 +63,7 @@ export default function Home() {
           <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('banner'); }}>CONTACT</a>
         </div>
 
-        <div className="scroll-indicator">
+        <div className="scroll-indicator" onClick={scrollToNextSection} style={{ cursor: 'pointer' }}>
           <p>SCROLL</p>
           <svg className="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
             <path d="M12 5v14M19 12l-7 7-7-7" />
@@ -91,27 +95,11 @@ export default function Home() {
         <div className="col projects-list">
           <div className="project">
             <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+            <p>A compact portfolio/CV built with the Astro framework.</p>
           </div>
           <div className="project">
             <h1><a href="" target="_blank">MOCKUP #1</a></h1>
-            <p>A mockup of a hypothetical luxury shop designed to practice CSS techniques, including Grid and Flexbox.</p>
-          </div>
-          <div className="project">
-            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
-          </div>
-          <div className="project">
-            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
-          </div>
-          <div className="project">
-            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
-          </div>
-          <div className="project">
-            <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-            <p>A compact portfolio/CV built with the Astro framework, styled to resemble an IDE, where personal information replaces code variables.</p>
+            <p>A mockup of a hypothetical luxury built with HTML and CSS.</p>
           </div>
         </div>
       </section>
