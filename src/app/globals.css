@@ -102,6 +102,11 @@ section {
     transition: opacity 0.3s ease;
 }
 
+.scroll-indicator p,
+.scroll-indicator svg {
+    pointer-events: none;
+}
+
 .scroll-indicator:hover {
     opacity: 1;
 }

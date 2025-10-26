@@ -26,8 +26,11 @@ export default function Home() {
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      
+      // Check if hovering over clickable elements
       const target = e.target;
-      const isClickable = target.closest('a, button, [onclick], .scroll-indicator, .footer-links h1');
+      const isClickable = target.closest('a, button, [onclick], .scroll-indicator, .scroll-arrow, .footer-links h1') ||
+                         target.matches('.scroll-indicator, .scroll-indicator *, .scroll-arrow');
       setIsHovering(!!isClickable);
     };
 
@@ -87,7 +90,8 @@ export default function Home() {
           width: isHovering ? '60px' : '40px',
           height: isHovering ? '60px' : '40px',
           borderRadius: '50%',
-          border: '2px solid rgba(255, 255, 255, 1)',
+          border: '2px solid white',
+          backgroundColor: 'white',
           pointerEvents: 'none',
           transform: 'translate(-50%, -50%)',
           zIndex: 9999,
