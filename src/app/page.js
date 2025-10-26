@@ -11,6 +11,7 @@ export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const [showCursor, setShowCursor] = useState(false);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -26,12 +27,12 @@ export default function Home() {
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-
-      // Check if hovering over clickable elements
+      
+      // Check if hovering over clickable elements or their children
       const target = e.target;
-      const isClickable = target.closest('a, button, [onclick], .scroll-indicator, .scroll-arrow, .footer-links h1') ||
-        target.matches('.scroll-indicator, .scroll-indicator *, .scroll-arrow');
-      setIsHovering(!!isClickable);
+      const isClickable = 
+        target.closest('a, button, [onclick], .scroll-indicator, .footer-links h1') !== null;
+      setIsHovering(isClickable);
     };
 
     window.addEventListener('mousemove', updateMousePosition);
@@ -43,7 +44,7 @@ export default function Home() {
 
   useEffect(() => {
     let animationFrameId;
-
+    
     const animate = () => {
       setCursorPosition(prev => ({
         x: prev.x + (mousePosition.x - prev.x) * 0.1,
@@ -80,25 +81,39 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const handleResize = () => {
-      const cursor = document.querySelector('.custom-cursor');
-      if (!cursor) return;
+  const cursor = document.querySelector('.custom-cursor');
+  if (!cursor) return;
 
-      if (window.innerWidth < 1920) {
-        cursor.style.display = 'none';
-      } else {
-        cursor.style.display = 'block';
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
+  const checkTouchDevice = () => {
+    try {
+      return (
+        typeof window !== "undefined" &&
+        ("ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          navigator.msMaxTouchPoints > 0)
+      );
+    } catch {
+      return false;
+    }
+  };
 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  const isTouch = checkTouchDevice();
+
+  cursor.style.display = isTouch ? "none" : "block";
+
+  const handleResize = () => {
+    const touch = checkTouchDevice();
+    cursor.style.display = touch ? "none" : "block";
+  };
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
 
   return (
     <>
-      <div
+      <div 
         className="custom-cursor"
         style={{
           position: 'fixed',
@@ -116,7 +131,7 @@ export default function Home() {
           transition: 'width 0.3s ease, height 0.3s ease'
         }}
       />
-
+      
       <div className="app" style={{ cursor: 'auto' }}>
         <section className="hero">
           {/* <div className="img">
@@ -140,8 +155,8 @@ export default function Home() {
           </div>
 
           <div className="scroll-indicator" onClick={scrollToNextSection} style={{ cursor: 'pointer' }}>
-            <p>SCROLL</p>
-            <svg className="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+            <p style={{ pointerEvents: 'none' }}>SCROLL</p>
+            <svg className="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ pointerEvents: 'none' }}>
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>

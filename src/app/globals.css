@@ -194,7 +194,7 @@ section.projects {
     width: 90%;
     top: auto;
     left: auto;
-    transform: translateY(200%);
+    transform: translateY(30%);
     margin: 2em auto 0;
     z-index: 2;
     display: flex;
@@ -207,6 +207,8 @@ section.projects {
     color: black;
     margin-top: 1%;
     font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 1rem;
 }
 
 .projects .col {
@@ -215,10 +217,10 @@ section.projects {
 
 .col.projects-cover {
     flex: 1;
-    height: 300vh;
+    height: 100vh;
     min-height: 400px;
     margin-left: 0;
-    transform: translateY(-40%);
+    transform: translateY(-80%);
 }
 
 .col.projects-list {
@@ -229,6 +231,8 @@ section.projects {
     align-items: center;
     gap: 3em;
     padding: 2em 1em;
+    overflow: hidden;
+    transform: translateY(-30%);
 }
 
 .project {
@@ -479,7 +483,6 @@ section.projects {
 
 /* Desktop: 1200px+ (YOUR ORIGINAL DESKTOP STYLES - UNTOUCHED!) */
 @media (min-width: 1200px) {
-
     * {
         cursor: auto !important;
     }
@@ -591,6 +594,7 @@ section.projects {
         color: black;
         margin-top: 1%;
         font-size: 30px;
+        transform: translateY(500%);
     }
 
     .col.projects-cover {
@@ -693,7 +697,7 @@ section.projects {
 
     .projects-brief {
         left: 23%;
-        top: 68%;
+        top: 62%;
     }
 
     .col.projects-cover {
