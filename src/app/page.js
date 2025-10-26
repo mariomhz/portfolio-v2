@@ -37,30 +37,18 @@ export default function Home() {
   useEffect(() => {
     let animationFrameId;
     
-    const followCursor = () => {
-      setCursorPosition(prev => {
-        const dx = mousePosition.x - prev.x;
-        const dy = mousePosition.y - prev.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        
-        // Only update if distance is greater than 0.5px (to avoid tiny movements)
-        if (distance > 0.5) {
-          animationFrameId = requestAnimationFrame(followCursor);
-          return {
-            x: prev.x + dx * 0.1,
-            y: prev.y + dy * 0.1
-          };
-        }
-        return prev;
-      });
+    const animate = () => {
+      setCursorPosition(prev => ({
+        x: prev.x + (mousePosition.x - prev.x) * 0.1,
+        y: prev.y + (mousePosition.y - prev.y) * 0.1
+      }));
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    followCursor();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId);
-      }
+      cancelAnimationFrame(animationFrameId);
     };
   }, [mousePosition]);
 
