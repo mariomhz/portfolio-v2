@@ -2,11 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: auto !important;
-}
-
-a, button, [onclick], .scroll-indicator, .footer-links h1 {
-    cursor: pointer !important;
+    cursor: none !important;
 }
 
 html,
@@ -39,7 +35,7 @@ h1 {
     color: white;
 }
 
-h1 > a {
+h1>a {
     color: inherit;
     text-decoration: inherit;
     font-size: inherit;
@@ -251,7 +247,7 @@ section.projects {
     color: black;
 }
 
-.project h1 > a {
+.project h1>a {
     color: inherit;
     text-decoration: inherit;
     font-size: 50px;
@@ -483,6 +479,19 @@ section.projects {
 
 /* Desktop: 1200px+ (YOUR ORIGINAL DESKTOP STYLES - UNTOUCHED!) */
 @media (min-width: 1200px) {
+
+    * {
+        cursor: auto !important;
+    }
+
+    a,
+    button,
+    [onclick],
+    .scroll-indicator,
+    .footer-links h1 {
+        cursor: pointer !important;
+    }
+
     h1 {
         font-size: 80px;
         font-weight: 400;
@@ -491,7 +500,7 @@ section.projects {
         color: white;
     }
 
-    h1 > a {
+    h1>a {
         color: inherit;
         text-decoration: inherit;
         font-size: inherit;
@@ -611,7 +620,7 @@ section.projects {
         color: black;
     }
 
-    .project h1 > a {
+    .project h1>a {
         color: inherit;
         text-decoration: inherit;
         font-size: inherit;

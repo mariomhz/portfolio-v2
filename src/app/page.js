@@ -26,11 +26,11 @@ export default function Home() {
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-      
+
       // Check if hovering over clickable elements
       const target = e.target;
       const isClickable = target.closest('a, button, [onclick], .scroll-indicator, .scroll-arrow, .footer-links h1') ||
-                         target.matches('.scroll-indicator, .scroll-indicator *, .scroll-arrow');
+        target.matches('.scroll-indicator, .scroll-indicator *, .scroll-arrow');
       setIsHovering(!!isClickable);
     };
 
@@ -43,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     let animationFrameId;
-    
+
     const animate = () => {
       setCursorPosition(prev => ({
         x: prev.x + (mousePosition.x - prev.x) * 0.1,
@@ -79,9 +79,26 @@ export default function Home() {
     scrollToSection('projects');
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      const cursor = document.querySelector('.custom-cursor');
+      if (!cursor) return;
+
+      if (window.innerWidth < 1920) {
+        cursor.style.display = 'none';
+      } else {
+        cursor.style.display = 'block';
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <>
-      <div 
+      <div
         className="custom-cursor"
         style={{
           position: 'fixed',
@@ -99,7 +116,7 @@ export default function Home() {
           transition: 'width 0.3s ease, height 0.3s ease'
         }}
       />
-      
+
       <div className="app" style={{ cursor: 'auto' }}>
         <section className="hero">
           {/* <div className="img">
