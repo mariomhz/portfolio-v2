@@ -580,10 +580,10 @@ section.projects {
 
     .projects-brief {
         position: absolute;
-        width: 25%;
+        width: 30%;
         top: 50%;
         left: 23%;
-        transform: translate(-60%, -130%);
+        transform: translate(-50%, -90%);
         z-index: 2;
         margin: 0;
         display: block;
@@ -593,8 +593,7 @@ section.projects {
     .projects-brief p {
         color: black;
         margin-top: 1%;
-        font-size: 30px;
-        transform: translateY(500%);
+        font-size: 20px;
     }
 
     .col.projects-cover {
