@@ -25,7 +25,6 @@ video {
     overflow: hidden;
 }
 
-/* Mobile-first: Base styles for mobile phones */
 h1 {
     font-family: var(--font-montserrat), sans-serif;
     font-size: 36px;
@@ -206,9 +205,8 @@ section.projects {
 .projects-brief p {
     color: black;
     margin-top: 1%;
-    font-size: 15px;
+    font-size: 25px;
     font-weight: lighter;
-    letter-spacing: 1rem;
 }
 
 .projects .col {
@@ -481,7 +479,7 @@ section.projects {
     }
 }
 
-/* Desktop: 1200px+ (YOUR ORIGINAL DESKTOP STYLES - UNTOUCHED!) */
+/* Desktop: 1200px+ */
 @media (min-width: 1200px) {
     * {
         cursor: auto !important;
@@ -593,12 +591,12 @@ section.projects {
     .projects-brief p {
         color: black;
         margin-top: 1%;
-        font-size: 20px;
+        font-size: 28px;
     }
 
     .col.projects-cover {
-        flex: 1;
-        height: 50%;
+        flex: 1.5;
+        height: 60%;
         margin-left: 10%;
         min-height: auto;
         transform: none;
