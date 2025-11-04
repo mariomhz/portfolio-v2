@@ -15,7 +15,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingProgress, setLoadingProgress] = useState(0);
 
-  // Loading effect
   useEffect(() => {
     let progress = 0;
     const interval = setInterval(() => {
@@ -173,16 +172,6 @@ export default function Home() {
             transition: 'width 0.3s ease'
           }} />
         </div>
-        <p style={{
-          marginTop: '2rem',
-          fontSize: '12px',
-          fontWeight: 500,
-          textTransform: 'uppercase',
-          letterSpacing: '2px',
-          color: 'rgba(255, 255, 255, 0.7)'
-        }}>
-          Loading Portfolio
-        </p>
       </div>
     );
   }
