@@ -235,6 +235,8 @@ export default function Home() {
             <p>/ SPRING BOOT</p>
             <p>/ C#</p>
             <p>/ MYSQL</p>
+            <p>/ STRUDEL.CC</p>
+            <p>/ TOUCHDESIGNER</p>
           </div>
 
           <div className="col projects-cover">
