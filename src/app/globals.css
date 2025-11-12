@@ -581,7 +581,7 @@ section.projects {
         width: 30%;
         top: 50%;
         left: 23%;
-        transform: translate(-50%, -90%);
+        transform: translate(-50%, -75%);
         z-index: 2;
         margin: 0;
         display: block;
