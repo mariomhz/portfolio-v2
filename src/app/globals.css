@@ -16,7 +16,7 @@
     }
 
     .portrait {
-        display: none;
+        display: none !important;
     }
 }
 
