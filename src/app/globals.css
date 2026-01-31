@@ -14,6 +14,28 @@ body {
     overflow-x: hidden;
 }
 
+/* Lenis/GSAP Compatibility */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
 img,
 video {
     position: absolute;
@@ -70,6 +92,13 @@ section {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+}
+
+/* Projects section needs overflow visible for ScrollTrigger pin */
+section.projects {
+    height: auto;
+    overflow: visible;
+    background-color: white;
 }
 
 .hero {
@@ -176,91 +205,13 @@ a {
     font-size: 12px;
 }
 
-section.projects {
-    color: black;
-    background-color: white;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding: 2em 0;
-}
-
-.projects-brief {
-    position: relative;
-    width: 90%;
-    top: auto;
-    left: auto;
-    transform: translateY(30%);
-    margin: 2em auto 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-    gap: 10%;
-    flex-wrap: wrap;
-}
-
-.projects-brief p {
-    color: black;
-    margin-top: 1%;
-    font-size: 25px;
-    font-weight: lighter;
-}
-
-.projects .col {
-    position: relative;
-}
-
-.col.projects-cover {
-    flex: 1;
-    height: 100vh;
-    min-height: 400px;
-    margin-left: 0;
-    transform: translateY(-80%);
-}
-
-.col.projects-list {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3em;
-    padding: 2em 1em;
-    overflow: hidden;
-    transform: translateY(-30%);
-}
-
-.project {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.project h1 {
-    font-family: var(--font-montserrat), sans-serif;
-    font-size: 36px;
-    font-weight: 400;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    color: black;
-}
-
-.project h1>a {
-    color: inherit;
-    text-decoration: inherit;
-    font-size: 50px;
-    font-weight: inherit;
-}
 
 .about {
     display: flex;
     flex-direction: column;
     background-color: black;
     height: auto;
+    min-height: 100vh;
 }
 
 .intro {
@@ -281,10 +232,12 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 400px;
 }
 
 .portrait img {
     left: 0;
+    top: 15%;
 }
 
 .intro p {
@@ -302,6 +255,24 @@ section.projects {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+}
+
+.portrait .portrait-container .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.banner > .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .banner {
@@ -314,6 +285,7 @@ section.projects {
 .banner-copy {
     position: relative;
     text-align: center;
+    z-index: 1;
 }
 
 .banner-copy p {
@@ -403,46 +375,6 @@ section.projects {
         flex-direction: column;
         gap: 1em;
         padding: 1em;
-    }
-
-    section.projects {
-        flex-direction: column;
-        height: auto;
-        min-height: 100vh;
-        gap: 2em;
-        padding: 2em 0;
-    }
-
-    .projects-brief {
-        position: relative;
-        width: 85%;
-        top: auto;
-        left: auto;
-        transform: translateY(200%);
-        margin: 2em auto 0;
-        display: flex;
-        flex-direction: row;
-        gap: 10%;
-        flex-wrap: wrap;
-    }
-
-    .projects h1>a {
-        font-size: 50px;
-    }
-
-    .projects-brief p {
-        font-size: 15px;
-    }
-
-    .col.projects-cover {
-        height: 10vh;
-        min-height: 300px;
-        transform: translateY(-60%);
-    }
-
-    .col.projects-list {
-        padding: 2em 1em;
-        gap: 3em;
     }
 
     .about {
@@ -565,69 +497,6 @@ section.projects {
         gap: 0;
     }
 
-    section.projects {
-        color: black;
-        background-color: white;
-        width: 100%;
-        height: 125vh;
-        display: flex;
-        gap: 10em;
-        flex-direction: row;
-        padding: 0;
-    }
-
-    .projects-brief {
-        position: absolute;
-        width: 30%;
-        top: 50%;
-        left: 23%;
-        transform: translate(-50%, -75%);
-        z-index: 2;
-        margin: 0;
-        display: block;
-        flex-wrap: nowrap;
-    }
-
-    .projects-brief p {
-        color: black;
-        margin-top: 1%;
-        font-size: 28px;
-    }
-
-    .col.projects-cover {
-        flex: 1.5;
-        height: 60%;
-        margin-left: 10%;
-        min-height: auto;
-        transform: none;
-    }
-
-    .col.projects-list {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2em;
-        padding: 0;
-    }
-
-    .project h1 {
-        font-family: var(--font-montserrat), sans-serif;
-        font-size: 80px;
-        font-weight: 400;
-        letter-spacing: -1px;
-        line-height: 1;
-        color: black;
-    }
-
-    .project h1>a {
-        color: inherit;
-        text-decoration: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-    }
-
     .about {
         display: flex;
         background-color: black;
@@ -690,18 +559,5 @@ section.projects {
 @media (min-width: 2000px) {
     .intro p {
         margin-right: 5%;
-    }
-
-    .projects-brief {
-        left: 23%;
-        top: 45%;
-    }
-
-    .col.projects-cover {
-        height: 50%;
-        margin-left: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

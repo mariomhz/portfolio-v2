@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import Lenis from "lenis";
+import { useLenis } from "../context/LenisContext";
 
 const lerp = (start, end, factor) => start + (end - start) * factor;
 
@@ -11,7 +11,7 @@ const ParallaxImage = ({ src, alt }) => {
   const currentTranslateY = useRef(0);
   const targetTranslateY = useRef(0);
   const rafId = useRef(null);
-  const lenisRef = useRef(null);
+  const lenis = useLenis();
 
   useEffect(() => {
     const updateBounds = () => {
@@ -27,16 +27,9 @@ const ParallaxImage = ({ src, alt }) => {
     updateBounds();
     window.addEventListener("resize", updateBounds);
 
-    lenisRef.current = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    const lenisAnimate = (time) => {
-      lenisRef.current.raf(time);
-
-      if (bounds.current) {
-        const relativeScroll = lenisRef.current.scroll - bounds.current.top;
+    const animate = () => {
+      if (bounds.current && lenis) {
+        const relativeScroll = lenis.scroll - bounds.current.top;
         targetTranslateY.current = relativeScroll * 0.2;
       }
 
@@ -52,16 +45,16 @@ const ParallaxImage = ({ src, alt }) => {
         }
       }
 
-      rafId.current = requestAnimationFrame(lenisAnimate);
+      rafId.current = requestAnimationFrame(animate);
     };
 
-    rafId.current = requestAnimationFrame(lenisAnimate);
+    rafId.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", updateBounds);
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
-  }, []);
+  }, [lenis]);
 
   return (
     <img

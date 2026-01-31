@@ -1,0 +1,258 @@
+.horizontalSection {
+  position: relative;
+  width: 100%;
+  /* Don't set overflow hidden here - it can interfere with pinning */
+}
+
+.horizontalContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* This will be pinned by ScrollTrigger */
+}
+
+.horizontalWrapper {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.panel {
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Skills Panel */
+.skillsPanel {
+  background-color: white;
+  color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem;
+}
+
+.skillsContent {
+  max-width: 600px;
+}
+
+.skillsTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.skillsList p {
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Project Panel */
+.projectPanel {
+  background-color: white;
+  padding: 4rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  height: 80%;
+}
+
+.projectImageWrapper {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.projectImageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.projectNumber {
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.projectTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 400;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: black;
+}
+
+.projectTitle a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.projectTitle a:hover {
+  opacity: 0.7;
+}
+
+.projectDescription {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  text-transform: none;
+  max-width: 400px;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 0.4em 0.8em;
+  background-color: #f0f0f0;
+  border-radius: 2em;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* CTA Panel */
+.ctaPanel {
+  background-color: white;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ctaContent {
+  text-align: center;
+}
+
+.ctaTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -1px;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.ctaText {
+  font-size: 14px;
+  color: #666;
+  text-transform: none;
+}
+
+/* Mobile Fallback - Vertical stacking */
+@media (max-width: 768px) {
+  .horizontalSection {
+    height: auto;
+  }
+
+  .horizontalContainer {
+    height: auto;
+    overflow: visible;
+  }
+
+  .horizontalWrapper {
+    flex-direction: column;
+    transform: none !important;
+  }
+
+  .panel {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+  }
+
+  .skillsPanel {
+    padding: 3rem 1.5rem;
+    align-items: center;
+  }
+
+  .skillsContent {
+    text-align: center;
+  }
+
+  .skillsList {
+    justify-content: center;
+  }
+
+  .projectCard {
+    flex-direction: column;
+    gap: 2rem;
+    height: auto;
+  }
+
+  .projectImageWrapper {
+    width: 100%;
+    height: 300px;
+    flex: none;
+  }
+
+  .projectInfo {
+    text-align: center;
+    align-items: center;
+  }
+
+  .projectDescription {
+    text-align: center;
+  }
+
+  .projectTags {
+    justify-content: center;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .skillsPanel {
+    padding: 6rem;
+  }
+
+  .projectPanel {
+    padding: 6rem;
+  }
+
+  .projectCard {
+    gap: 6rem;
+  }
+}

@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import ParallaxImage from "./components/ParallaxImage";
 import ParallaxVideo from "./components/ParallaxVideo";
-import Lenis from "lenis";
+import HorizontalScroll from "./components/HorizontalScroll";
+import { LenisProvider } from "./context/LenisContext";
 import Image from "next/image";
 import styles from "./page.module.css";
 
@@ -32,16 +33,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-  }, []);
 
   useEffect(() => {
     const updateMousePosition = (e) => {
@@ -177,8 +168,8 @@ export default function Home() {
   }
 
   return (
-    <>
-      <div 
+    <LenisProvider>
+      <div
         className="custom-cursor"
         style={{
           position: 'fixed',
@@ -196,7 +187,7 @@ export default function Home() {
           transition: 'width 0.3s ease, height 0.3s ease'
         }}
       />
-      
+
       <div className="app" style={{ cursor: 'auto' }}>
         <section className="hero">
           <div className="title">
@@ -218,42 +209,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="projects">
-          <div className="projects-brief">
-            <p>/ JAVASCRIPT</p>
-            <p>/ TYPESCRIPT</p>
-            <p>/ NEXT.JS</p>
-            <p>/ REACT</p>
-            <p>/ THREE.JS</p>
-            <p>/ VUE</p>
-            <p>/ HTML</p>
-            <p>/ CSS</p>
-            <p>/ TAILWIND</p>
-            <p>/ BOOTSTRAP</p>
-            <p>/ FIGMA</p>
-            <p>/ ILLUSTRATOR</p>
-            <p>/ JAVA</p>
-            <p>/ SPRING BOOT</p>
-            <p>/ C#</p>
-            <p>/ MYSQL</p>
-          </div>
-
-          <div className="col projects-cover">
-            <div className="img">
-              <ParallaxImage src="/portraits/gradient1.jpg" alt="" />
-            </div>
-          </div>
-          <div className="col projects-list">
-            <div className="project">
-              <h1><a href="https://portfolio-eight-iota-48.vercel.app/" target="_blank" rel="noopener noreferrer">PORTFOLIO V.1</a></h1>
-              <p>A compact portfolio/CV built with the Astro framework.</p>
-            </div>
-            <div className="project">
-              <h1><a href="" target="_blank">MOCKUP #1</a></h1>
-              <p>A mockup of a hypothetical luxury built with HTML and CSS.</p>
-            </div>
-          </div>
-        </section>
+        <HorizontalScroll />
 
         <section className="about">
           <div className="col intro">
@@ -308,6 +264,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-    </>
+    </LenisProvider>
   );
 }
