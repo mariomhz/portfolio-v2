@@ -63,8 +63,6 @@ const HorizontalScroll = () => {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return;
-
     const container = containerRef.current;
     const wrapper = wrapperRef.current;
 
