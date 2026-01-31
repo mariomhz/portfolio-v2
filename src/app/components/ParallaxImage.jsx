@@ -18,6 +18,8 @@ const ParallaxImage = ({ src, alt }) => {
   lenisRef.current = lenis;
 
   useEffect(() => {
+    let resizeTimer = null;
+
     const updateBounds = () => {
       if (imageRaf.current) {
         const currentLenis = lenisRef.current;
@@ -29,6 +31,12 @@ const ParallaxImage = ({ src, alt }) => {
         };
         boundsInitialized.current = true;
       }
+    };
+
+    const handleResize = () => {
+      // Debounce resize to let Lenis/ScrollTrigger settle
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateBounds, 150);
     };
 
     const animate = () => {
@@ -56,11 +64,12 @@ const ParallaxImage = ({ src, alt }) => {
       rafId.current = requestAnimationFrame(animate);
     };
 
-    window.addEventListener("resize", updateBounds);
+    window.addEventListener("resize", handleResize);
     rafId.current = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener("resize", updateBounds);
+      if (resizeTimer) clearTimeout(resizeTimer);
+      window.removeEventListener("resize", handleResize);
       if (rafId.current) cancelAnimationFrame(rafId.current);
     };
   }, []);
