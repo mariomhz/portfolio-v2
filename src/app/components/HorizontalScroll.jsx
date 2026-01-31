@@ -27,7 +27,7 @@ const projects = [
 ];
 
 const skills = [
-  "JAVASCRIPT (ES6+)",
+  "JAVASCRIPT (ES16)",
   "TYPESCRIPT",
   "REACT",
   "NEXT.JS",
