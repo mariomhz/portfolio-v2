@@ -5,6 +5,17 @@
     cursor: none !important;
 }
 
+/* Hide custom cursor on mobile/touch devices */
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
+}
+
 html,
 body {
     width: 100%;
