@@ -16,13 +16,12 @@ const projects = [
     image: "/portraits/gradient1.jpg",
     tags: ["Astro", "CSS", "JavaScript"],
   },
-  {
-    id: 2,
-    title: "MOCKUP #1",
-    description: "A mockup of a hypothetical luxury brand built with HTML and CSS.",
-    url: "",
+  {                                                                                                                id: 2,                                                                                                     
+    title: "ASIREM",                                                                                           
+    description: "A luxury fragrance e-commerce concept with dynamic color palettes, product catalog, and multi-step checkout flow.",
+    url: "https://mariomhz.github.io/Fragrance-Website/",
     image: "/portraits/gradient2.jpg",
-    tags: ["HTML", "CSS"],
+    tags: ["HTML", "CSS", "JavaScript"]
   },
 ];
 
