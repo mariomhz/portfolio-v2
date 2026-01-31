@@ -276,10 +276,12 @@ a {
 }
 
 .banner {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5em 1.5em;
+    min-height: 400px;
 }
 
 .banner-copy {

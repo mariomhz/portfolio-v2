@@ -42,6 +42,12 @@ export const LenisProvider = ({ children }) => {
 
     gsap.ticker.lagSmoothing(0);
 
+    // Refresh ScrollTrigger and trigger resize after layout is ready
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      window.dispatchEvent(new Event('resize'));
+    }, 100);
+
     return () => {
       gsap.ticker.remove(lenisInstance.raf);
       lenisInstance.destroy();
