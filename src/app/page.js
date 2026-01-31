@@ -216,9 +216,8 @@ export default function Home() {
           <div className="col intro">
             <p>Who am I?</p>
             <p>
-              I&apos;m Mario. A polyglot fluent in 8 languages, I enjoy breaking communication barriers and creating seamless digital experiences.
-              I like to design impactful visuals and purposeful concepts,
-              and I thrive in collaborative environments where my tech skills, creativity, and social abilities come together.
+              I&apos;m a frontend developer who builds with React and Next.js. I care about how things work as much as how they look: fast load times, accessible markup, code that's easy to maintain. Also, I speak 8 languages, which has nothing to do with JavaScript but explains why I like clear
+   communication.
             </p>
           </div>
           <div className="col portrait">
