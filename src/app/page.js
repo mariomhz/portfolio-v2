@@ -220,13 +220,14 @@ export default function Home() {
 
         <section className="projects">
           <div className="projects-brief">
+            <p>/ JAVASCRIPT</p>
+            <p>/ TYPESCRIPT</p>
             <p>/ NEXT.JS</p>
             <p>/ REACT</p>
+            <p>/ THREE.JS</p>
             <p>/ VUE</p>
             <p>/ HTML</p>
             <p>/ CSS</p>
-            <p>/ JAVASCRIPT</p>
-            <p>/ TYPESCRIPT</p>
             <p>/ TAILWIND</p>
             <p>/ BOOTSTRAP</p>
             <p>/ FIGMA</p>
@@ -235,8 +236,6 @@ export default function Home() {
             <p>/ SPRING BOOT</p>
             <p>/ C#</p>
             <p>/ MYSQL</p>
-            <p>/ STRUDEL.CC</p>
-            <p>/ TOUCHDESIGNER</p>
           </div>
 
           <div className="col projects-cover">
