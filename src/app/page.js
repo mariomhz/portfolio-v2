@@ -191,11 +191,12 @@ export default function Home() {
       <div className="app" style={{ cursor: 'auto' }}>
         <section className="hero">
           <div className="title">
-            <h1>Front-end Developer <span className="italic">with UX/UI focus</span></h1>
+            <h1>Mario Hernández</h1>
+            <p className="role">Front-end Developer — React & Next.js</p>
           </div>
 
           <div className="nav">
-            <p>MARIO HERNÁNDEZ</p>
+            {/* <p>MARIO HERNÁNDEZ</p> */}
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>PROJECTS</a>
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>PROFILE</a>
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('banner'); }}>CONTACT</a>
