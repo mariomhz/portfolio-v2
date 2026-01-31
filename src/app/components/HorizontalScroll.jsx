@@ -27,22 +27,24 @@ const projects = [
 ];
 
 const skills = [
-  "JAVASCRIPT",
+  "JAVASCRIPT (ES6+)",
   "TYPESCRIPT",
-  "NEXT.JS",
   "REACT",
-  "THREE.JS",
+  "NEXT.JS",
   "VUE",
-  "HTML",
-  "CSS",
-  "TAILWIND",
-  "BOOTSTRAP",
-  "FIGMA",
-  "ILLUSTRATOR",
-  "JAVA",
+  "HTML5 & CSS3",
+  "TAILWIND CSS",
+  "RESPONSIVE DESIGN & ACCESSIBILITY",
+  "WEB PERFORMANCE & SEO",
+  "STATE MANAGEMENT PATTERNS",
+  "REST APIS & AUTHENTICATION (JWT)",
   "SPRING BOOT",
-  "C#",
   "MYSQL",
+  "TESTING (JEST, RTL, CYPRESS)",
+  "GIT & CI/CD",
+  "DOCKER",
+  "FIGMA",
+  "THREE.JS"
 ];
 
 const HorizontalScroll = () => {
