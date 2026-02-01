@@ -10,18 +10,35 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: "PORTFOLIO V.1",
-    description: "A compact portfolio/CV built with the Astro framework.",
-    url: "https://portfolio-eight-iota-48.vercel.app/",
+    title: "PROJECT 1",
+    description: "in progress...",
+    url: "#",
     image: "/portraits/gradient1.jpg",
-    tags: ["Astro", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript"],
   },
-  {                                                                                                                id: 2,                                                                                                     
-    title: "ASIREM",                                                                                           
-    description: "A luxury fragrance e-commerce concept with dynamic color palettes, product catalog, and multi-step checkout flow.",
-    url: "https://mariomhz.github.io/Fragrance-Website/",
+  {
+    id: 2,
+    title: "PROJECT 2",
+    description: "in progress...",
+    url: "#",
     image: "/portraits/gradient2.jpg",
-    tags: ["HTML", "CSS", "JavaScript"]
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: 3,
+    title: "PROJECT 3",
+    description: "in progress...",
+    url: "#",
+    image: "/portraits/gradient5.jpg",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    id: 4,
+    title: "PROJECT 4",
+    description: "in progress...",
+    url: "#",
+    image: "/portraits/gradient4.jpg",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
 ];
 
