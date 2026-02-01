@@ -254,10 +254,10 @@ export default function Home() {
           <div className="col">
             <p><a href="https://instagram.com/mariocoding" target="_blank" rel="noopener noreferrer">Instagram</a> / <a href="https://github.com/mariomhz" target="_blank" rel="noopener noreferrer">Github</a> / <a href="https://www.linkedin.com/in/josemariohernandez/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
             <div className="footer-links">
-              <h1 onClick={scrollToTop} style={{ cursor: 'none' }}>Back to top</h1>
               <h1 onClick={() => scrollToSection('projects')} style={{ cursor: 'none' }}>Projects</h1>
               <h1 onClick={() => scrollToSection('about')} style={{ cursor: 'none' }}>About</h1>
               <h1 onClick={() => scrollToSection('banner')} style={{ cursor: 'none' }}>Contact</h1>
+              <h1 onClick={scrollToTop} style={{ cursor: 'none' }}>Back to top</h1>
             </div>
             <p>&copy; developed and designed by Mario Hernandez</p>
           </div>
