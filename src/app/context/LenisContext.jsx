@@ -32,17 +32,14 @@ export const LenisProvider = ({ children }) => {
     lenisRef.current = lenisInstance;
     setLenis(lenisInstance);
 
-    // Connect Lenis to ScrollTrigger
     lenisInstance.on("scroll", ScrollTrigger.update);
 
-    // Tell GSAP to use Lenis's scroll position
     gsap.ticker.add((time) => {
       lenisInstance.raf(time * 1000);
     });
 
     gsap.ticker.lagSmoothing(0);
 
-    // Refresh ScrollTrigger and trigger resize after layout is ready
     setTimeout(() => {
       ScrollTrigger.refresh();
       window.dispatchEvent(new Event('resize'));

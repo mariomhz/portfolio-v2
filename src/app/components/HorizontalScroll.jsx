@@ -69,18 +69,14 @@ const HorizontalScroll = () => {
 
     if (!container || !wrapper) return;
 
-    // Small delay to ensure Lenis is connected to ScrollTrigger
     const timer = setTimeout(() => {
-      // Calculate total scroll distance
       const scrollDistance = wrapper.scrollWidth - window.innerWidth;
 
-      // Create the horizontal scroll animation
       const tween = gsap.to(wrapper, {
         x: -scrollDistance,
         ease: "none",
       });
 
-      // Create ScrollTrigger with pin
       const scrollTrigger = ScrollTrigger.create({
         trigger: container,
         start: "top top",
@@ -92,11 +88,9 @@ const HorizontalScroll = () => {
         invalidateOnRefresh: true,
       });
 
-      // Store for cleanup
       container._scrollTrigger = scrollTrigger;
       container._tween = tween;
 
-      // Refresh ScrollTrigger to recalculate positions
       ScrollTrigger.refresh();
     }, 100);
 
@@ -124,6 +118,10 @@ const HorizontalScroll = () => {
                   <p key={index}>/ {skill}</p>
                 ))}
               </div>
+            </div>
+            <div className={styles.scrollHint}>
+              <span>Scroll down to explore projects</span>
+              <span className={styles.arrow}>→</span>
             </div>
           </div>
 

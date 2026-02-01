@@ -196,7 +196,6 @@ export default function Home() {
           </div>
 
           <div className="nav">
-            {/* <p>MARIO HERNÁNDEZ</p> */}
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>PROJECTS</a>
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>PROFILE</a>
             <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('banner'); }}>CONTACT</a>

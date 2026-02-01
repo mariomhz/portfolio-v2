@@ -34,7 +34,6 @@ const ParallaxImage = ({ src, alt }) => {
     };
 
     const handleResize = () => {
-      // Debounce resize to let Lenis/ScrollTrigger settle
       if (resizeTimer) clearTimeout(resizeTimer);
       resizeTimer = setTimeout(updateBounds, 150);
     };
@@ -42,7 +41,6 @@ const ParallaxImage = ({ src, alt }) => {
     const animate = () => {
       const currentLenis = lenisRef.current;
 
-      // Recalculate bounds once Lenis is available
       if (currentLenis && !boundsInitialized.current) {
         updateBounds();
       }

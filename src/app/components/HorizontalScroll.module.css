@@ -1,7 +1,6 @@
 .horizontalSection {
   position: relative;
   width: 100%;
-  /* Don't set overflow hidden here - it can interfere with pinning */
 }
 
 .horizontalContainer {
@@ -9,7 +8,6 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* This will be pinned by ScrollTrigger */
 }
 
 .horizontalWrapper {
@@ -37,6 +35,8 @@
   justify-content: center;
   align-items: flex-start;
   padding: 4rem;
+  width: 92vw; /* Narrower to show peek of next panel */
+  position: relative;
 }
 
 .skillsContent {
@@ -65,6 +65,37 @@
   color: black;
   text-transform: uppercase;
   margin: 0;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(12px, 1.5vw, 16px);
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.scrollHint .arrow {
+  display: inline-block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Project Panel */
@@ -189,6 +220,7 @@
   .skillsPanel {
     padding: 2rem 1.5rem;
     align-items: center;
+    width: 95vw; /* More peek on mobile for better UX */
   }
 
   .skillsContent {
@@ -197,6 +229,11 @@
 
   .skillsList {
     justify-content: center;
+  }
+
+  .scrollHint {
+    bottom: 2rem;
+    font-size: 11px;
   }
 
   .projectCard {

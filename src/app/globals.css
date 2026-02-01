@@ -5,7 +5,6 @@
     cursor: none !important;
 }
 
-/* Hide custom cursor on mobile/touch devices */
 @media (max-width: 768px), (hover: none), (pointer: coarse) {
     * {
         cursor: auto !important;
@@ -29,7 +28,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Lenis/GSAP Compatibility */
 html.lenis,
 html.lenis body {
     height: auto;
@@ -109,7 +107,6 @@ section {
     overflow: hidden;
 }
 
-/* Projects section needs overflow visible for ScrollTrigger pin */
 section.projects {
     height: auto;
     overflow: visible;
@@ -343,7 +340,6 @@ a {
     height: 100%;
 }
 
-/* Slightly larger phones: 481px to 768px */
 @media (min-width: 481px) {
     .projects-brief {
         width: 85%;
@@ -355,7 +351,6 @@ a {
     }
 }
 
-/* Tablet: 769px to 1199px */
 @media (min-width: 769px) {
     h1 {
         font-size: 48px;
@@ -445,7 +440,6 @@ a {
     }
 }
 
-/* Desktop: 1200px+ */
 @media (min-width: 1200px) {
     * {
         cursor: auto !important;
