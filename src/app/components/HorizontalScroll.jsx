@@ -137,7 +137,7 @@ const HorizontalScroll = () => {
               </div>
             </div>
             <div className={styles.scrollHint}>
-              <span>Scroll down to explore projects</span>
+              <span>Scroll to explore projects</span>
               <span className={styles.arrow}>→</span>
             </div>
           </div>
