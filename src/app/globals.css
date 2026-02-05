@@ -491,7 +491,7 @@ a {
         z-index: 2;
         color: white;
         position: absolute;
-        top: 45%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
@@ -519,7 +519,7 @@ a {
     .nav {
         font-family: var(--font-roboto-mono), monospace;
         position: absolute;
-        top: 55%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
