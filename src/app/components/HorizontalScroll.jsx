@@ -10,11 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: "PROJECT 1",
-    description: "in progress...",
-    url: "#",
+    title: "MOSIR",
+    description: "Interactive 3D globe built with Three.js showcasing the languages I speak.",
+    url: "https://mariomhz.github.io/mosir/",
     image: "/portraits/gradient1.jpg",
-    tags: ["HTML", "CSS", "JavaScript"],
+    screenshot: "/projects/mosir-screenshot.jpg",
+    tags: ["Three.js", "JavaScript", "HTML"],
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const projects = [
     description: "in progress...",
     url: "#",
     image: "/portraits/gradient2.jpg",
+    screenshot: null,
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
@@ -30,6 +32,7 @@ const projects = [
     description: "in progress...",
     url: "#",
     image: "/portraits/gradient5.jpg",
+    screenshot: null,
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
@@ -38,6 +41,7 @@ const projects = [
     description: "in progress...",
     url: "#",
     image: "/portraits/gradient4.jpg",
+    screenshot: null,
     tags: ["HTML", "CSS", "JavaScript"],
   },
 ];
@@ -68,6 +72,7 @@ const HorizontalScroll = () => {
   const containerRef = useRef(null);
   const wrapperRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -146,14 +151,57 @@ const HorizontalScroll = () => {
           {projects.map((project, index) => (
             <div key={project.id} className={`${styles.panel} ${styles.projectPanel}`}>
               <div className={styles.projectCard}>
-                <div className={styles.projectImageWrapper}>
-                  <img src={project.image} alt={project.title} />
-                </div>
+                {project.url && project.url !== "#" ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.projectImageWrapper} ${hoveredProject === project.id ? styles.hovered : ''}`}
+                    onMouseEnter={() => setHoveredProject(project.id)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={styles.gradientImage}
+                    />
+                    {project.screenshot && (
+                      <img
+                        src={project.screenshot}
+                        alt={`${project.title} screenshot`}
+                        className={styles.screenshotImage}
+                      />
+                    )}
+                  </a>
+                ) : (
+                  <div
+                    className={`${styles.projectImageWrapper} ${hoveredProject === project.id ? styles.hovered : ''}`}
+                    onMouseEnter={() => setHoveredProject(project.id)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={styles.gradientImage}
+                    />
+                    {project.screenshot && (
+                      <img
+                        src={project.screenshot}
+                        alt={`${project.title} screenshot`}
+                        className={styles.screenshotImage}
+                      />
+                    )}
+                  </div>
+                )}
                 <div className={styles.projectInfo}>
                   <span className={styles.projectNumber}>
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h1 className={styles.projectTitle}>
+                  <h1
+                    className={styles.projectTitle}
+                    onMouseEnter={() => setHoveredProject(project.id)}
+                    onMouseLeave={() => setHoveredProject(null)}
+                  >
                     {project.url ? (
                       <a href={project.url} target="_blank" rel="noopener noreferrer">
                         {project.title}
