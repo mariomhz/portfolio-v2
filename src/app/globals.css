@@ -449,7 +449,9 @@ a {
     button,
     [onclick],
     .scroll-indicator,
-    .footer-links h1 {
+    .footer-links h1,
+    [data-cursor="pointer"],
+    [data-cursor="pointer"] img {
         cursor: pointer !important;
     }
 

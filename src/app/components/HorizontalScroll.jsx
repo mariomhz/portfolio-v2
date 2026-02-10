@@ -157,6 +157,7 @@ const HorizontalScroll = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${styles.projectImageWrapper} ${hoveredProject === project.id ? styles.hovered : ''}`}
+                    data-cursor="pointer"
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
@@ -176,6 +177,7 @@ const HorizontalScroll = () => {
                 ) : (
                   <div
                     className={`${styles.projectImageWrapper} ${hoveredProject === project.id ? styles.hovered : ''}`}
+                    data-cursor="pointer"
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
