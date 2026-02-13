@@ -20,7 +20,7 @@ const projects = [
   {
     id: 2,
     title: "SKYABOVE",
-    description: "Live flight statistics dashboard with real-time aviation metrics and flip-clock animations.",
+    description: "Flight dashboard connected to the AviationStack REST API via a typed TypeScript client, with server-side caching and animated stat transitions.",
     url: "https://skyabove-dashboard.vercel.app",
     image: "/portraits/gradient2.jpg",
     screenshot: null,
