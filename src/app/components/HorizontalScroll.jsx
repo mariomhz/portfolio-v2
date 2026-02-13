@@ -19,12 +19,12 @@ const projects = [
   },
   {
     id: 2,
-    title: "PROJECT 2",
-    description: "in progress...",
-    url: "#",
+    title: "SKYABOVE",
+    description: "Live flight statistics dashboard with real-time aviation metrics and flip-clock animations.",
+    url: "https://skyabove-dashboard.vercel.app",
     image: "/portraits/gradient2.jpg",
     screenshot: null,
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
   },
   {
     id: 3,
