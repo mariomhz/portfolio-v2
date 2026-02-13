@@ -23,7 +23,7 @@ const projects = [
     description: "Flight dashboard connected to the AviationStack REST API via a typed TypeScript client, with server-side caching and animated stat transitions.",
     url: "https://skyabove-dashboard.vercel.app",
     image: "/portraits/gradient2.jpg",
-    screenshot: "/projects/skyabove-project.jpg",
+    screenshot: "/projects/skyabove-screenshot.jpg",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
   },
   {
