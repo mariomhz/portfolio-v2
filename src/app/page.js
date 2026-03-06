@@ -2,44 +2,20 @@
 
 import { useEffect, useState } from "react";
 import ParallaxImage from "./components/ParallaxImage";
-import ParallaxVideo from "./components/ParallaxVideo";
 import HorizontalScroll from "./components/HorizontalScroll";
 import { LenisProvider } from "./context/LenisContext";
-import Image from "next/image";
-import styles from "./page.module.css";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [showCursor, setShowCursor] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
-
-  useEffect(() => {
-    let progress = 0;
-    const interval = setInterval(() => {
-      progress += Math.random() * 30;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(interval);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
-      }
-      setLoadingProgress(Math.floor(progress));
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, []);
-
 
   useEffect(() => {
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
-      
+
       const target = e.target;
-      const isClickable = 
+      const isClickable =
         target.closest('a, button, [onclick], .scroll-indicator, .footer-links h1') !== null;
       setIsHovering(isClickable);
     };
@@ -53,7 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     let animationFrameId;
-    
+
     const animate = () => {
       setCursorPosition(prev => ({
         x: prev.x + (mousePosition.x - prev.x) * 0.1,
@@ -118,55 +94,6 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (isLoading) {
-    return (
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100vh',
-        backgroundColor: 'black',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 10000,
-        opacity: loadingProgress === 100 ? 0 : 1,
-        transition: 'opacity 0.5s ease'
-      }}>
-        <h1 style={{
-          fontFamily: 'var(--font-montserrat), sans-serif',
-          fontSize: 'clamp(48px, 8vw, 120px)',
-          fontWeight: 400,
-          letterSpacing: '-2px',
-          color: 'white',
-          marginBottom: '2rem'
-        }}>
-          {loadingProgress}%
-        </h1>
-        <div style={{
-          width: '60%',
-          maxWidth: '400px',
-          height: '2px',
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <div style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            height: '100%',
-            width: `${loadingProgress}%`,
-            backgroundColor: 'white',
-            transition: 'width 0.3s ease'
-          }} />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <LenisProvider>
       <div
@@ -192,7 +119,7 @@ export default function Home() {
         <section className="hero">
           <div className="title">
             <h1>Mario Hernández</h1>
-            <p className="role">Front-end Developer — React & Next.js</p>
+            <p className="role">Fullstack Developer — React, Next.js & Spring Boot</p>
           </div>
 
           <div className="nav">
@@ -215,8 +142,10 @@ export default function Home() {
           <div className="col intro">
             <p>Who am I?</p>
             <p>
-              I&apos;m a frontend developer who builds with React and Next.js. I care about how things work as much as how they look: fast load times, accessible markup, code that's easy to maintain. Also, I speak 8 languages, which has nothing to do with JavaScript but explains why I like clear
-   communication.
+              I&apos;m a polyglot fullstack developer fluent in 8 languages, driven by a deep interest in breaking communication barriers, both human and digital. I build with React, Next.js, and Spring Boot, and I care about creating experiences where clarity, purpose, and visual impact work together.
+            </p>
+            <p>
+              I thrive in collaborative environments where I can work with people, not just for them. I speak Portuguese, Spanish, English, Italian, Catalan, French, Norwegian, and American Sign Language and that shapes how I think about accessibility, communication, and code.
             </p>
           </div>
           <div className="col portrait">
@@ -245,6 +174,9 @@ export default function Home() {
               </a>
               <a href="https://github.com/mariomhz" target="_blank" rel="noopener noreferrer">
                 GitHub
+              </a>
+              <a href="/resume.pdf" download>
+                Download CV
               </a>
             </div>
           </div>

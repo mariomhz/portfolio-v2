@@ -11,51 +11,53 @@ const projects = [
   {
     id: 1,
     title: "MOSIR",
-    description: "Interactive 3D globe built with Three.js showcasing the languages I speak.",
+    description: "Interactive 3D globe built with Three.js and custom WebGL shaders, visualizing language data with smooth orbital controls and responsive canvas rendering.",
     url: "https://mariomhz.github.io/mosir/",
+    github: "https://github.com/mariomhz/mosir",
     image: "/portraits/gradient1.jpg",
     screenshot: "/projects/mosir-screenshot.jpg",
-    tags: ["Three.js", "JavaScript", "HTML"],
+    tags: ["Three.js", "JavaScript", "WebGL", "HTML"],
   },
   {
     id: 2,
     title: "SKYABOVE",
-    description: "Flight dashboard connected to the AviationStack REST API via a typed TypeScript client, with server-side caching and animated stat transitions.",
+    description: "Flight dashboard with a Next.js backend that proxies the AviationStack REST API, implements server-side caching, and serves typed data to a responsive UI with animated stat transitions.",
     url: "https://skyabove-dashboard.vercel.app",
+    github: "https://github.com/mariomhz/skyabove",
     image: "/portraits/gradient2.jpg",
     screenshot: "/projects/skyabove-screenshot.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
+    tags: ["Next.js", "TypeScript", "REST API", "Tailwind CSS", "GSAP"],
   },
   {
     id: 3,
     title: "EMBER",
-    description: "A minimal, focused habit tracker built with Next.js. Track your daily rituals, build streaks, and stay consistent with guest mode or authenticated persistence.",
+    description: "Fullstack habit tracker with NextAuth.js authentication, PostgreSQL persistence via Prisma ORM, and REST API routes for CRUD operations. Includes a guest mode using localStorage as a fallback.",
     url: "https://ember-eight-psi.vercel.app/",
+    github: "https://github.com/mariomhz/ember",
     image: "/portraits/gradient5.jpg",
     screenshot: "/projects/ember-screenshot.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "NextAuth.js", "Tailwind CSS"],
   },
 ];
 
-const skills = [
-  "JAVASCRIPT (ES16)",
-  "TYPESCRIPT",
-  "REACT",
-  "NEXT.JS",
-  "VUE",
-  "HTML5 & CSS3",
-  "TAILWIND CSS",
-  "RESPONSIVE DESIGN & ACCESSIBILITY",
-  "WEB PERFORMANCE & SEO",
-  "STATE MANAGEMENT PATTERNS",
-  "REST APIS & AUTHENTICATION (JWT)",
-  "SPRING BOOT",
-  "MYSQL",
-  "TESTING (JEST, RTL, CYPRESS)",
-  "GIT & CI/CD",
-  "DOCKER",
-  "FIGMA",
-  "THREE.JS"
+const skillCategories = [
+  {
+    title: "Frontend",
+    skills: [
+      "JavaScript (ES2025)", "TypeScript", "React", "Next.js", "Vue",
+      "HTML5 & CSS3", "Tailwind CSS", "GSAP & Three.js",
+      "Responsive Design & Accessibility", "Web Performance & SEO",
+      "State Management", "Testing (Jest, RTL, Cypress)"
+    ]
+  },
+  {
+    title: "Backend & Infrastructure",
+    skills: [
+      "Node.js", "REST APIs & JWT Auth", "Spring Boot",
+      "PostgreSQL & MySQL", "Prisma ORM", "Docker",
+      "Git & CI/CD", "Figma"
+    ]
+  }
 ];
 
 const HorizontalScroll = () => {
@@ -126,11 +128,16 @@ const HorizontalScroll = () => {
           <div className={`${styles.panel} ${styles.skillsPanel}`}>
             <div className={styles.skillsContent}>
               <h2 className={styles.skillsTitle}>Tech Skills</h2>
-              <div className={styles.skillsList}>
-                {skills.map((skill, index) => (
-                  <p key={index}>/ {skill}</p>
-                ))}
-              </div>
+              {skillCategories.map((category, catIndex) => (
+                <div key={catIndex} className={styles.skillCategory}>
+                  <h3 className={styles.skillCategoryTitle}>{category.title}</h3>
+                  <div className={styles.skillsList}>
+                    {category.skills.map((skill, index) => (
+                      <p key={index}>/ {skill}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
             <div className={styles.scrollHint}>
               <span>Scroll to explore projects</span>
@@ -210,6 +217,10 @@ const HorizontalScroll = () => {
                       </span>
                     ))}
                   </div>
+                  <div className={styles.projectLinks}>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">Source Code</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -218,8 +229,10 @@ const HorizontalScroll = () => {
           {/* CTA Panel */}
           <div className={`${styles.panel} ${styles.ctaPanel}`}>
             <div className={styles.ctaContent}>
-              <h2 className={styles.ctaTitle}>More projects coming soon</h2>
-              <p className={styles.ctaText}>Stay tuned for updates</p>
+              <h2 className={styles.ctaTitle}>See more on GitHub</h2>
+              <a href="https://github.com/mariomhz" target="_blank" rel="noopener noreferrer" className={styles.ctaLink}>
+                github.com/mariomhz
+              </a>
             </div>
           </div>
         </div>

@@ -1,15 +1,12 @@
-// app/layout.js
 import { Montserrat, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-// CSS variable for Montserrat
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-// CSS variable for Roboto Mono
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
@@ -17,8 +14,13 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata = {
-  title: "MARIO HERNÁNDEZ || FRONT END DEVELOPER",
-  description: "Portfolio for Mario Hernández.",
+  title: "MARIO HERNÁNDEZ || FULLSTACK DEVELOPER",
+  description: "Fullstack developer specializing in React, Next.js, and Spring Boot. Based in Europe.",
+  openGraph: {
+    title: "MARIO HERNÁNDEZ || FULLSTACK DEVELOPER",
+    description: "Fullstack developer specializing in React, Next.js, and Spring Boot. Based in Europe.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

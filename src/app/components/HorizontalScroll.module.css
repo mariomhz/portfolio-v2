@@ -35,7 +35,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 4rem;
-  width: 92vw; /* Narrower to show peek of next panel */
+  width: 92vw;
   position: relative;
 }
 
@@ -51,6 +51,20 @@
   line-height: 1;
   margin-bottom: 2rem;
   color: black;
+}
+
+.skillCategory {
+  margin-bottom: 1.5rem;
+}
+
+.skillCategoryTitle {
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: clamp(11px, 1.5vw, 14px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 0.75rem;
 }
 
 .skillsList {
@@ -208,6 +222,28 @@
   text-transform: uppercase;
 }
 
+.projectLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.projectLinks a {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #333;
+  text-decoration: none;
+  padding: 0.4em 0;
+  border-bottom: 1px solid #ccc;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.projectLinks a:hover {
+  color: black;
+  border-color: black;
+}
+
 /* CTA Panel */
 .ctaPanel {
   background-color: white;
@@ -228,10 +264,19 @@
   margin-bottom: 1rem;
 }
 
-.ctaText {
-  font-size: 14px;
-  color: #666;
-  text-transform: none;
+.ctaLink {
+  font-family: var(--font-roboto-mono), monospace;
+  font-size: clamp(14px, 2vw, 20px);
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.25em;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.ctaLink:hover {
+  color: black;
+  border-color: black;
 }
 
 /* Mobile - Horizontal scroll with adjusted layout */
@@ -243,11 +288,15 @@
   .skillsPanel {
     padding: 2rem 1.5rem;
     align-items: center;
-    width: 95vw; /* More peek on mobile for better UX */
+    width: 95vw;
   }
 
   .skillsContent {
     text-align: center;
+  }
+
+  .skillCategory {
+    margin-bottom: 1rem;
   }
 
   .skillsList {
@@ -304,6 +353,10 @@
   }
 
   .projectTags {
+    justify-content: center;
+  }
+
+  .projectLinks {
     justify-content: center;
   }
 }
