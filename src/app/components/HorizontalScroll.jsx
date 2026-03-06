@@ -28,21 +28,12 @@ const projects = [
   },
   {
     id: 3,
-    title: "PROJECT 3",
-    description: "in progress...",
-    url: "#",
+    title: "EMBER",
+    description: "A minimal, focused habit tracker built with Next.js. Track your daily rituals, build streaks, and stay consistent with guest mode or authenticated persistence.",
+    url: "https://ember-eight-psi.vercel.app/",
     image: "/portraits/gradient5.jpg",
-    screenshot: null,
-    tags: ["HTML", "CSS", "JavaScript"],
-  },
-  {
-    id: 4,
-    title: "PROJECT 4",
-    description: "in progress...",
-    url: "#",
-    image: "/portraits/gradient4.jpg",
-    screenshot: null,
-    tags: ["HTML", "CSS", "JavaScript"],
+    screenshot: "/projects/ember-screenshot.jpg",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Prisma"],
   },
 ];
 
