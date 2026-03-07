@@ -119,7 +119,7 @@ export default function Home() {
         <section className="hero">
           <div className="title">
             <h1>Mario Hernández</h1>
-            <p className="role">Fullstack Developer — React, Next.js & Spring Boot</p>
+            <p className="role">Frontend & Fullstack Developer — React, Next.js & Spring Boot</p>
           </div>
 
           <div className="nav">
@@ -142,7 +142,7 @@ export default function Home() {
           <div className="col intro">
             <p>Who am I?</p>
             <p>
-              I&apos;m a polyglot fullstack developer fluent in 8 languages, driven by a deep interest in breaking communication barriers, both human and digital. I build with React, Next.js, and Spring Boot, and I care about creating experiences where clarity, purpose, and visual impact work together.
+              I&apos;m a polyglot developer fluent in 8 languages, driven by a deep interest in breaking communication barriers, both human and digital. I design and build interactive experiences where clarity, purpose, and visual impact work together.
             </p>
             <p>
               I thrive in collaborative environments where I can work with people, not just for them. I speak Portuguese, Spanish, English, Italian, Catalan, French, Norwegian, and American Sign Language and that shapes how I think about accessibility, communication, and code.
