@@ -118,8 +118,8 @@ export default function Home() {
       <div className="app" style={{ cursor: 'auto' }}>
         <section className="hero">
           <div className="title">
-            <h1>Mário Hernández</h1>
-            <p className="role">Frontend & Fullstack Developer — React, Next.js & Spring Boot</p>
+            <h1>José Mario Hernández</h1>
+            <p className="role">Frontend & Fullstack Developer: React, Next.js & Spring Boot</p>
           </div>
 
           <div className="nav">
